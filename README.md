@@ -1,10 +1,10 @@
-LeagueSharp
-===========
+## AhriSharp<br>
+Done<br>
+Need to work out what kind of R logic options I may add.
 
-AhriSharp
-Mostly done, Till i work out what / if i want to implement R logic options.
-
-Planned (Soon(TM), No particular order)
-Anivia
-Kassadin
-Lissandra
+## Planned<br>
+Soon™<br>
+-- Anivia<br>
+-- Kassadin<br>
+-- Lissandra<br>
+(No particular order)
