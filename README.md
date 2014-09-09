@@ -1,7 +1,7 @@
 ## FishermanFizz<br>
 Q, W, E, R Combo w/ W before AA & DFG Shark Target<br>
 LaneClear Q, E  w/ Mana Management<br>
-JungleClear Q, E<br>
+JungleClear Q, W, E<br>
 Q, E, R Range Drawing<br>
 Ignite Killable Target<br>
 Future: E Evading.<br>

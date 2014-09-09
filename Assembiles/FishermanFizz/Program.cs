@@ -80,6 +80,7 @@ namespace FishermanFizz
 
             Config.AddSubMenu(new Menu("JungleClear", "JungleClear"));
             Config.SubMenu("JungleClear").AddItem(new MenuItem("UseQj", "Use Q").SetValue(true));
+            Config.SubMenu("JungleClear").AddItem(new MenuItem("UseWj", "Use W").SetValue(true));
             Config.SubMenu("JungleClear").AddItem(new MenuItem("UseEj", "Use E").SetValue(true));
             Config.SubMenu("JungleClear").AddItem(new MenuItem("JungleClearActive", "JungleClear!").SetValue(new KeyBind("V".ToCharArray()[0], KeyBindType.Press)));
 
@@ -132,7 +133,7 @@ namespace FishermanFizz
             Obj_AI_Hero eTarget = SimpleTs.GetTarget(800, SimpleTs.DamageType.Magical);
             Obj_AI_Hero rTarget = SimpleTs.GetTarget(R.Range, SimpleTs.DamageType.Magical);
 
-            if (rTarget.IsValidTarget(R.Range) || R.IsReady())
+            if (rTarget.IsValidTarget(R.Range) && R.IsReady())
             {
                 DFG.Cast(rTarget);
             }
@@ -163,7 +164,6 @@ namespace FishermanFizz
                   rTarget.Health)) return;
             if (R.GetPrediction(rTarget).Hitchance < HitChance.High) return;
             R.Cast(rTarget, true);
-            DFG.Cast(rTarget);
         }
 
         private static void Harass()
@@ -220,12 +220,18 @@ namespace FishermanFizz
         {
             var qJungle = MinionManager.GetMinions(Player.ServerPosition, 800, MinionTypes.All, MinionTeam.Neutral, MinionOrderTypes.MaxHealth);
             var eJungle = MinionManager.GetMinions(Player.ServerPosition, E.Range + E.Width + 30, MinionTypes.All, MinionTeam.Neutral, MinionOrderTypes.MaxHealth);
+            var wJungle = MinionManager.GetMinions(Player.ServerPosition, Player.AttackRange, MinionTypes.All, MinionTeam.Neutral, MinionOrderTypes.MaxHealth);
             var useQj = Config.Item("UseQj").GetValue<bool>();
+            var useWj = Config.Item("UseWj").GetValue<bool>();
             var useEj = Config.Item("UseEj").GetValue<bool>();
 
             foreach (var jmob in qJungle.Where(jmob => useQj).Where(jmob => Q.IsReady()))
             {
                 Q.CastOnUnit(jmob, true);
+            }
+            if (useWj && wJungle.Count >= 1)
+            {
+                W.Cast();
             }
             if (!useEj) return;
             if (!E.IsReady() || JumpState != 0) return;
