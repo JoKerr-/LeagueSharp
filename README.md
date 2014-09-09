@@ -1,6 +1,14 @@
-## AhriSharp<br>
-Done<br>
-Need to work out what kind of R logic options I may add.
+## FishermanFizz<br>
+Q, W, E, R Combo w/ W before AA & DFG Shark Target<br>
+LaneClear Q, E  w/ Mana Management<br>
+JungleClear Q, E<br>
+Q, E, R Range Drawing<br>
+Ignite Killable Target<br>
+Future: E Evading.<br>
 
-## Planned<br>
-Soon™<br>
+## AhriSharp<br>
+Q, W, E Combo w/ DFG Charmed Target<br>
+LaneClear Q, W w/ Mana Management<br>
+JungleClear Q, W<br>
+Ignite Killable Target<br>
+Future: Range Drawing, R Logic, Change Ignite.
