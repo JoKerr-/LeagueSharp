@@ -276,7 +276,7 @@ namespace FishermanFizz
 
             if (qCircle.Active && Q.IsReady())
                 Utility.DrawCircle(Player.Position, Q.Range, qCircle.Color);
-            if (eCircle.Active)
+            if (eCircle.Active && E.IsReady())
                 Utility.DrawCircle(Player.Position, E.Range, rCircle.Color);
             if (rCircle.Active && R.IsReady())
                 Utility.DrawCircle(Player.Position, R.Range, rCircle.Color);
