@@ -11,4 +11,4 @@ Q, W, E Combo w/ DFG Charmed Target<br>
 LaneClear Q, W w/ Mana Management<br>
 JungleClear Q, W<br>
 Q, E, R Range Drawing<br>
-Future: R Logic
+Future: No more updates to this: Use one in UC it's OPAF.
