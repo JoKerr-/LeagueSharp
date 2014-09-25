@@ -41,7 +41,7 @@ namespace FishermanFizz
             E2 = new Spell(SpellSlot.E, 400);
             R = new Spell(SpellSlot.R, 1200);  //1275 True
 
-            DFG = Utility.Map.GetMap() == Utility.Map.MapType.TwistedTreeline ? new Items.Item(3188, 750) : new Items.Item(3128, 750);
+            DFG = Utility.Map.GetMap()._MapType == Utility.Map.MapType.TwistedTreeline ? new Items.Item(3188, 750) : new Items.Item(3128, 750);
 
             IgniteSlot = Player.GetSpellSlot("SummonerDot");
 
@@ -246,7 +246,7 @@ namespace FishermanFizz
             {
                 if (!(Player.Distance(Champion) <= 600) || IgniteSlot == SpellSlot.Unknown ||
                     Player.SummonerSpellbook.CanUseSpell(IgniteSlot) != SpellState.Ready ||
-                    !(DamageLib.getDmg(Champion, DamageLib.SpellType.IGNITE) - 5 > Champion.Health)) continue;
+                    !(ObjectManager.Player.GetSummonerSpellDamage(Champion, Damage.SummonerSpell.Ignite) - 5 > Champion.Health)) continue;
                 Player.SummonerSpellbook.CastSpell(IgniteSlot, Champion);
             }
         }
